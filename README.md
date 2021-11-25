@@ -72,6 +72,6 @@ Here is a list of the files in the repo folder and their description:
 3. data.csv: the dataset for the project.
 4. data_collection.py: I coded this script to make it easier for me to add books to the dataset at the time of collecting the data.
 5. model.pkl: the machine learning model.
-6. project.ipynb: the jupyter notebook that contains everything from data exploration to building the machine learning pipline and creating the actual model.
+6. project.ipynb: the jupyter notebook that contains everything from data exploration to building the machine learning pipeline and creating the actual model.
 7. README.md: the README for the repo.
 8. requirements.txt: Library requirements.
