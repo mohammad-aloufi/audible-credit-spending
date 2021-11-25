@@ -53,6 +53,8 @@ You also need the following libraries:
 * joblib
 * pickle
 * sklearn
+* matplotlib
+* seaborn
 
 Or you can just do "pip install -r requirements.txt"
 
