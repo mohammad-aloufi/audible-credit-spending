@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Audible credit spending model</title>
+</head>
+<body>
+<h1>Book data</h1>
+<form action="/result" method="get">
+<label for="book_price">Book price</label>
+<input type="text" id="book_price" name="book_price">
+<label for="hours">Choose the book hour length</label>
+<select id="hours" name="book_hour_length">
+{% for i in hours %}
+<option value="{{i}}">{{i}}</option>
+{% endfor %}
+</select>
+<select id="minutes" name="book_minute_length">
+{% for i in minutes %}
+<option value="{{i}}">{{i}}</option>
+{% endfor %}
+</select>
+<input type ="submit" value="submit">
+</form>
+</body>
+</html>
