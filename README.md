@@ -1,4 +1,4 @@
-# Introduction
+# Project Overview
 
 [Audible](https://audible.com) is a very well-known service among those who love books like myself. They provide audio books and podcasts on their platform.
 
@@ -10,7 +10,7 @@ At the time of this writing, a credit worth is in the range of to $9.56 to $14.9
 
 How much a credit is worth is calculated by how much you're paying divided by the amount of credits you'd get.
 
-# The problem
+# Problem Statement
 
 Along with getting credits, audible memberships offer a 30% discount on the books you buy if you decide not to spend the credit, and here is something I'm personally stuck at and thus decided to make this project
 
@@ -37,9 +37,48 @@ I then trained a machine learning model on that dataset to recognize my credit s
 
 Lastly, I made a web app with flask, including the model, so you can basically just go in, and enter a book price, and the length of that book, and see if it's worth paying for in real money or spending the credit is a better idea.
 
+# Methodology
+
+## Data Preprocessing
+
+Our dataset contains 4 features:
+
+* price
+* hours
+* minutes
+* credit_spent
+
+I merged the hours and minutes into one column and dropped the columns I no longer need.
+
+Please look at the provided notebook for more details on how I did it.
+
+# Data Exploration and visualization
+
+Our dataset contains the following features:
+
+* price
+* hours
+* minutes
+* credit_spent
+
+Like I explained in the last section, I merged  the hours and minutes columns into 1 called duration, so for example:
+
+If hours is 11 and minutes is 30, in the new duration column that would be 11.5.
+
+One of the things I explored is the credit spending habits, lets take a look
+
+![image](https://github.com/mohammad-aloufi/audible-credit-spending/blob/master/image.png?raw=true)
+
+As you can see, both the books I spent credits on and the books I didn't are equal. In the dataset, it's actually 50 books each.
+
+# Implementation
+
+When I built the model pipeline, I used GridSearchCV. I used it because the way it works, you give it a few parameters like a grid, and then it combines them together in every possible way, giving us the best values hopefully.
+I also used the accuracy_score to measure the model score because It will give us the accuracy of how much it works against the testing data. As in, it calculate the amount it predicted right vs the times it predicted wrong and give us the score that way.
+
 # The expected solution
 
-The expected solution and the end result of this project is to help with the decision if buying with a credit is worth it or not with the help of the machine learning model we created.
+The expected solution and the end result of this project is to help with the decision if buying with a credit is worth it or not with the help of the machine learning model I created.
 With the help of the web app as well, one can just launch the app and input the book data and just check and test the model.
 
 # Installation
@@ -75,3 +114,11 @@ Here is a list of the files in the repo folder and their description:
 6. project.ipynb: the jupyter notebook that contains everything from data exploration to building the machine learning pipeline and creating the actual model.
 7. README.md: the README for the repo.
 8. requirements.txt: Library requirements.
+
+# Improvements and difficulty
+
+I think that collecting the data was the hardest part. It took me some time to gather everything and label every book. But I made a script to help with that, and it actually helped. As for the improvements, I'm honestly happy that I managed to get to an excellent accuracy with my model, and for me that means I really did good with all the steps I did before, from data collection to building the machine learning pipeline and what not, however, I think that it could be deceiving just as much. I think I need more data to really test the model. For now I have just 100 books and it's enough for now, but I'd love me some data that go to other ranges of numbers too. I also would love to improve the app even more and add a feature where you just put in the link of the book, and it gets all the required info for you and then predict on them instead of you manually typing and selecting everything.
+
+# Conclusion
+
+Throughout this project, I collected a dataset that contains some information about some books on audible, like their member price, and duration. I then labeled every book with if it's good to spend an audible credit on that book or not. I then started exploring the dataset on this notebook and made a machine learning model to hopefully help me and others to decide if it's a good idea to buy a book with a credit, or just use the 30% discount that comes with all audible memberships. I also made a web app where you can input the book price and the book length to see for that book if spending the credit is worth it or not.
