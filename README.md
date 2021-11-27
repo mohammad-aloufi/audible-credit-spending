@@ -32,6 +32,7 @@ Even though, more often than not, I find myself torn between both options, so I 
 # Metrix
 
 I used the accuracy_score to measure the model score because It will give us the accuracy of how much it works against the testing data. As in, it calculate the amount it predicted right vs the times it predicted wrong and give us the score that way.
+It's the number of correct predictions divided by the total predictions multiplied by 100. Since our our labels are in just one column, we didn't need morre than that for that model.
 
 # Solving the problem
 
@@ -89,6 +90,22 @@ It didn't take much for me to get to 100% accuracy to be honest, I think that's 
 However, I managed to get to the same result but with less time by changing the parameters. At first, I was getting 100% accuracy with a training time of 0.14 minutes. I then decided to change the max_depth from 10 to 1, 5, and 10, I got a better result, 100% accuracy with  a training time of 0.08 minutes.
 I also changed the estimators and max_leaf_nodes so they wouldn't take as much time.
 
+parameters for the 0.14 minutes model:
+
+* max_depth: 10, 10, 10.
+* n_estimators: 10, 10, 10.
+* min_samples_split: 2, 3, 4].
+* random_state: 42.
+* max_leaf_nodes: 10, 10, 10.
+
+parameters for the 0.08 minutes model:
+
+* max_depth: 1, 5, 10.
+* n_estimators: 1, 5, 10.
+* min_samples_split: 2, 3, 4.
+* random_state: 42.
+* max_leaf_nodes: 2, 5, 10.
+
 I think the good thing here is that we saved time when building the pipeline rather than getting a better accuracy because the model is as accurate as it can get, and that's a good thing.
 
 # Justification
@@ -98,7 +115,7 @@ With the help of the web app as well, one can just launch the app and input the 
 
 # Reflection
 
-This project was interesting to say the least. Since it's actually a personal project, it was something I looked forward to. I had a problem before starting this project, and now that I finished it, I can say that I don't have this big problem when deciding what to do when I want to buy books.
+This project was interesting to say the least. Since it's actually a personal project, it was something I looked forward to. I had a problem before starting this project, and now that I finished it, I can say that I don't have this big problem when deciding what to do when I want to buy books. I learned a lot when I was doing this project, doing everything from the scratch was part of it. Collecting the data, labeling them, and then building the model, and actually create a web app that makes things easier for everyone wo wants to use it.
 I think that collecting the data was the hardest part. It took me some time to gather everything and label every book. But I made a script to help with that, and it actually helped. After that comes the building of the pipeline, it wasn't hard, but was really interesting to say the least, I thought I'd be messing with the parameters for a while, but it was an easy ride actually.
 
 # Improvement
